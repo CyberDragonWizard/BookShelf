@@ -2,15 +2,19 @@
 
 ## Project Name
 
-The name of your project.
+BookShelf
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+BookShelf is interactive search app. that allows a user to search for a specific book, read its description, and save/favorite results.
 
 ## API and Data Sample
 
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
+(10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+0: {kind: "books#volume", id: "qUo0AQAAQBAJ", etag: "DT+rKBOdOdY", selfLink: "https://www.googleapis.com/books/v1/volumes/qUo0AQAAQBAJ", volumeInfo: {…}, …}
+1: {kind: "books#volume", id: "BtaVOPKPzssC", etag: "343QbgsS8NI", selfLink: "https://www.googleapis.com/books/v1/volumes/BtaVOPKPzssC", volumeInfo: {…}, …}
+2: {kind: "books#volume", id: "pjBHDwAAQBAJ", etag: "0RwQi3zDW0I", selfLink: "https://www.googleapis.com/books/v1/volumes/pjBHDwAAQBAJ", volumeInfo: {…}, …}
+
 
 ## Wireframes
 
@@ -24,14 +28,18 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 *These are examples only. Replace with your own MVP features.*
 
 - Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Create a search bar that hits external api
+- Display search results on the body of the page
+- Allow user to add search results to favorite bar
+- Create a description button the displays the description of the book from api
+- Professionaly style with CSS
 
 #### PostMVP  
 *These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- Add subtle SFX to the interactive elements of the web page
+- Create animations for the interactive elements of the webpage
+- More advanced styling
 
 ## Project Schedule
 
