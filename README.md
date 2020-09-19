@@ -18,11 +18,8 @@ BookShelf is interactive search app. that allows a user to search for a specific
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+https://imgur.com/a/O7zdPN7
 
-### MVP/PostMVP
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
 *These are examples only. Replace with your own MVP features.*
@@ -33,12 +30,12 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Allow user to add search results to favorite bar
 - Create a description button the displays the description of the book from api
 - Professionaly style with CSS
+- Create animations for the interactive elements of the webpage
 
 #### PostMVP  
 *These are examples only. Replace with your own Post-MVP features.*
 
 - Add subtle SFX to the interactive elements of the web page
-- Create animations for the interactive elements of the webpage
 - More advanced styling
 
 ## Project Schedule
@@ -58,7 +55,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+https://imgur.com/a/5gKXhKK
 
 ## Timeframes
 
@@ -68,9 +65,14 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Working with API | H | 4.5hrs|  |  |
+| HTML/Form Layout | H | 4hrs|  |  |
+| Interaction via JS | H | 5.5hrs|  |  |
+| CSS Styling| H | 8hrs|  |  |
+| CSS Animations| H | 5hrs|  |  |
+
+
+| Total | H | 6hrs|  |  |
 
 ## Code Snippet
 
