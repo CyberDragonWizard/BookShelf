@@ -28,7 +28,6 @@ https://imgur.com/a/O7zdPN7
 - Find and use external api 
 - Create a search bar that hits external api
 - Display search results on the body of the page
-- Allow user to add search results to favorite bar
 - Create a description button the displays the description of the book from api
 - Professionaly style with CSS
 - Create animations for the interactive elements of the webpage
@@ -36,6 +35,7 @@ https://imgur.com/a/O7zdPN7
 #### PostMVP  
 
 - Add subtle SFX to the interactive elements of the web page
+- Allow user to add search results to favorite bar
 - More advanced styling
 
 ## Project Schedule
