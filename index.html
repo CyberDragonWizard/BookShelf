@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer src="./app.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <title>BookShelf</title>
 </head>
 <body>
-   <h1>test baby</h1> 
+   <h1>BookShelf</h1> 
    <div id='search'>
        <form id="form">
            <div class='input'>
-               <input type="search">
-               <label for="search">Search Books</label>
+               <input type="text" id="input" placeholder="Book/Novel Title">
+               <button id="search-button">Search</button>
            </div>
-           <button id="button">Search</button>
-
        </form>
 
    </div>
+   <h2>Search Results</h2>
+    <div class="results">
+      
+    </div>
 </body>
 </html>

@@ -1,14 +1,37 @@
-// key: DfnU9VwvPJOPJd5h3g2HWQ
-// secret: 2n5rFBQ6g1vCRBgh1vShUxjzCipLgLBZSDJ9izEg8
 
-const fetchData = async () => {
-    const url = 'https://www.googleapis.com/books/v1/volumes?q=annihilation'
+const url = `https://www.googleapis.com/books/v1/volumes?q=`
+const input = document.querySelector('#input');
+const button = document.querySelector('#search-button');
 
-    try {
-        const response = await axios.get(url)
-        console.log(response.data.items)
-    } catch (error) {
-        console.log(`Error: ${error}`)
-    }
+button.addEventListener('click', async (e) => {
+    e.preventDefault();
+    let userInput = input.value;
+    const response = await axios.get(url + userInput)
+    console.log(response)
+    renderList(response.data.items)
+})
+
+const searchResults = document.querySelector('.results');
+
+const renderList = books => {
+    books.forEach(data => {
+        const bookContainer = document.createElement('div');
+        bookContainer.className = 'book-container';
+
+        const title = document.createElement('h3');
+        title.innerHTML = data.volumeInfo.title;
+        bookContainer.appendChild(title);
+
+        if (data.volumeInfo.authors !== undefined) {
+        const author = document.createElement('p');
+        author.innerHTML = data.volumeInfo.authors;
+        bookContainer.appendChild(author);
+        }
+
+        const cover = document.createElement('img');
+        cover.setAttribute('src', data.volumeInfo.imageLinks.thumbnail);
+        bookContainer.appendChild(cover);
+
+        searchResults.appendChild(bookContainer);
+    })
 }
-fetchData()
