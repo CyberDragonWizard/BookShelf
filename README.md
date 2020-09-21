@@ -60,15 +60,15 @@ https://imgur.com/a/5gKXhKK
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Working with API | H | 4.5hrs|  |  |
+| Working with API | H | 5.5hrs|  |  |
 | DOM Manipulation | H | 7hrs|  |  |
-| HTML/Form Layout | H | 4hrs|  |  |
+| HTML/Form Layout | H | 5hrs|  |  |
 | Interaction via JS | H | 5.5hrs|  |  |
 | CSS Styling| H | 8hrs|  |  |
 | CSS Animations| H | 5hrs|  |  |
 
 
-| Total | H | 6hrs|  |  |
+| Total | H | hrs| 36 |  |
 
 ## Code Snippet
 
