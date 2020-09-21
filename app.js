@@ -32,6 +32,20 @@ const renderList = books => {
         cover.setAttribute('src', data.volumeInfo.imageLinks.thumbnail);
         bookContainer.appendChild(cover);
 
+        bookContainer.appendChild(createDescriptionButton())
+
         searchResults.appendChild(bookContainer);
     })
+
+}
+
+function createDescriptionButton() {
+    let descriptionButton = document.createElement('button')
+    descriptionButton.innerHTML = 'Show Descrition'
+    descriptionButton.addEventListener('click', handleDelete)
+    return  descriptionButton
+}
+
+function handleDelete() {
+    this.parentNode.remove()
 }
