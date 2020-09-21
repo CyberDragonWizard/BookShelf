@@ -22,7 +22,6 @@ https://imgur.com/a/O7zdPN7
 
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
 - Find and use external api 
 - Create a search bar that hits external api
@@ -33,7 +32,6 @@ https://imgur.com/a/O7zdPN7
 - Create animations for the interactive elements of the webpage
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
 - Add subtle SFX to the interactive elements of the web page
 - More advanced styling
@@ -59,13 +57,11 @@ https://imgur.com/a/5gKXhKK
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Working with API | H | 4.5hrs|  |  |
+| DOM Manipulation | H | 7hrs|  |  |
 | HTML/Form Layout | H | 4hrs|  |  |
 | Interaction via JS | H | 5.5hrs|  |  |
 | CSS Styling| H | 8hrs|  |  |
