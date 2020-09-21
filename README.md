@@ -10,6 +10,8 @@ BookShelf is interactive search app. that allows a user to search for a specific
 
 ## API and Data Sample
 
+'https://www.googleapis.com/books/v1/volumes?q=[bookTitleGoesHere]'
+
 (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
 0: {kind: "books#volume", id: "qUo0AQAAQBAJ", etag: "DT+rKBOdOdY", selfLink: "https://www.googleapis.com/books/v1/volumes/qUo0AQAAQBAJ", volumeInfo: {…}, …}
 1: {kind: "books#volume", id: "BtaVOPKPzssC", etag: "343QbgsS8NI", selfLink: "https://www.googleapis.com/books/v1/volumes/BtaVOPKPzssC", volumeInfo: {…}, …}
