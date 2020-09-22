@@ -15,26 +15,39 @@ const searchResults = document.querySelector('.results');
 
 const renderList = books => {
     books.forEach(data => {
-        const bookContainer = document.createElement('div');
-        bookContainer.className = 'book-container';
+        const resultsDiv = document.querySelector('.results')
+        const bookDiv = document.createElement('div')
+        bookDiv.classList = ('book-div')
+        resultsDiv.append(bookDiv)
+
 
         const title = document.createElement('h3');
         title.innerHTML = data.volumeInfo.title;
-        bookContainer.appendChild(title);
+        bookDiv.appendChild(title);
 
         if (data.volumeInfo.authors !== undefined) {
         const author = document.createElement('p');
         author.innerHTML = data.volumeInfo.authors;
-        bookContainer.appendChild(author);
+        bookDiv.appendChild(author);
         }
 
         const cover = document.createElement('img');
         cover.setAttribute('src', data.volumeInfo.imageLinks.thumbnail);
-        bookContainer.appendChild(cover);
+        bookDiv.appendChild(cover);
 
-        bookContainer.appendChild(createDescriptionButton())
+        bookDiv.appendChild(createDescriptionButton())
 
-        searchResults.appendChild(bookContainer);
+        const description = document.createElement('p');
+        description.innerHTML = data.volumeInfo.description;
+        document.querySelector('.modal').appendChild(description);
+
+        const showModal = document.querySelector('.description')
+        const descriptionButton = document.querySelector('.description-button')
+        descriptionButton.addEventListener('click', () => {
+        showModal.classList.add('display-description')
+        });
+
+        searchResults.appendChild(bookDiv);
     })
 
 }
@@ -42,10 +55,15 @@ const renderList = books => {
 function createDescriptionButton() {
     let descriptionButton = document.createElement('button')
     descriptionButton.innerHTML = 'Show Descrition'
-    descriptionButton.addEventListener('click', handleDelete)
+    descriptionButton.setAttribute('class', 'description-button')
+    // descriptionButton.addEventListener('click', handleDelete)
     return  descriptionButton
 }
 
-function handleDelete() {
-    this.parentNode.remove()
-}
+// const descriptionButton = document.querySelector('.description-button')
+// const description = document.querySelector('.description')
+
+// descriptionButton.addEventListener('click', () => {
+//     description.classList.add('display-description')
+// });
+
