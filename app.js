@@ -9,16 +9,17 @@ button.addEventListener('click', async (e) => {
     const response = await axios.get(url + userInput)
     console.log(response)
     renderList(response.data.items)
+    displayDes(response.data.items)
 })
 
 const searchResults = document.querySelector('.results');
 
-const renderList = books => {
-    books.forEach(data => {
-        const resultsDiv = document.querySelector('.results')
+const renderList = (book) => {
+    book.forEach(data => {
+        const descriptionDiv = document.querySelector('.results')
         const bookDiv = document.createElement('div')
         bookDiv.classList = ('book-div')
-        resultsDiv.append(bookDiv)
+        descriptionDiv.append(bookDiv)
 
 
         const title = document.createElement('h3');
@@ -35,19 +36,24 @@ const renderList = books => {
         cover.setAttribute('src', data.volumeInfo.imageLinks.thumbnail);
         bookDiv.appendChild(cover);
 
+        // const description= document.createElement('p');
+        // description.innerHTML = data.volumeInfo.description;
+        // bookDiv.appendChild(description)
+
         bookDiv.appendChild(createDescriptionButton())
 
-        const description = document.createElement('p');
-        description.innerHTML = data.volumeInfo.description;
-        document.querySelector('.modal').appendChild(description);
+        // const description = document.createElement('p');
+        // description.innerHTML = data.volumeInfo.description;
+        // document.querySelector('.modal').appendChild(description);
 
-        const showModal = document.querySelector('.description')
-        const descriptionButton = document.querySelector('.description-button')
-        descriptionButton.addEventListener('click', () => {
-        showModal.classList.add('display-description')
-        });
+        // const showModal = document.querySelector('.description')
+        // const descriptionButton = document.querySelector('.description-button')
+        // descriptionButton.addEventListener('click', () => {
+        // showModal.classList.add('display-description')
+        // });
 
         searchResults.appendChild(bookDiv);
+
     })
 
 }
@@ -56,14 +62,21 @@ function createDescriptionButton() {
     let descriptionButton = document.createElement('button')
     descriptionButton.innerHTML = 'Show Descrition'
     descriptionButton.setAttribute('class', 'description-button')
-    // descriptionButton.addEventListener('click', handleDelete)
     return  descriptionButton
 }
 
-// const descriptionButton = document.querySelector('.description-button')
-// const description = document.querySelector('.description')
+const displayDes = (book) => {
+    book.forEach(data => {
+        const descriptionDiv = document.querySelector('.description-content')
+        const modalDiv = document.createElement('div')
+        modalDiv.classList = ('modal-div')
+        descriptionDiv.append(modalDiv)
 
-// descriptionButton.addEventListener('click', () => {
-//     description.classList.add('display-description')
-// });
+
+        const description = document.createElement('p');
+        description.innerHTML = data.volumeInfo.description;
+        modalDiv.appendChild(description);
+    })
+}
+
 
