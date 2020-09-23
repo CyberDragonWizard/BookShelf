@@ -9,7 +9,7 @@ button.addEventListener('click', async (e) => {
     const response = await axios.get(url + userInput)
     console.log(response)
     renderList(response.data.items)
-    displayDes(response.data.items)
+    // displayDes(response.data.items)
 
     input.value = ''
 })
@@ -36,15 +36,19 @@ const renderList = (book) => {
         bookDiv.appendChild(author);
         }
 
+        if (data.volumeInfo.imageLinks !== undefined) {
         const cover = document.createElement('img');
         cover.setAttribute('src', data.volumeInfo.imageLinks.thumbnail);
         bookDiv.appendChild(cover);
+        }
 
-        // const description= document.createElement('p');
-        // description.innerHTML = data.volumeInfo.description;
-        // bookDiv.appendChild(description)
+        if (data.volumeInfo.description !== undefined) {
+        const description= document.createElement('p');
+        description.innerHTML = data.volumeInfo.description;
+        bookDiv.appendChild(description)
 
         bookDiv.appendChild(createDescriptionButton())
+        }
 
         // const description = document.createElement('p');
         // description.innerHTML = data.volumeInfo.description;
@@ -69,21 +73,21 @@ function createDescriptionButton() {
     return  descriptionButton   
 }
 
-const displayDes = (book) => {
-    removeDescription()
-    book.forEach(data => {
-        const descriptionDiv = document.querySelector('.description-content')
-        const modalDiv = document.createElement('div')
-        modalDiv.classList = ('modal-div')
-        descriptionDiv.append(modalDiv)
+// const displayDes = (book) => {
+//     removeDescription()
+//     book.forEach(data => {
+//         const descriptionDiv = document.querySelector('.description-content')
+//         const modalDiv = document.createElement('div')
+//         modalDiv.classList = ('modal-div')
+//         descriptionDiv.append(modalDiv)
 
-        if (data.volumeInfo.description !== undefined) {
-        const description = document.createElement('p');
-        description.innerHTML = data.volumeInfo.description;
-        modalDiv.appendChild(description);
-        }
-    })
-}
+//         if (data.volumeInfo.description !== undefined) {
+//         const description = document.createElement('p');
+//         description.innerHTML = data.volumeInfo.description;
+//         modalDiv.appendChild(description);
+//         }
+//     })
+// }
 
 const removeData = () => {
     const oldData = document.querySelector('.results')
