@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap');
 body {
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-image: url('./bookshelf.jpeg');
+}
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 66px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    margin: 80px;
+    color: whitesmoke;
+}
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(43, 43, 43);
 }
 img {
     border-radius: 10px;
@@ -9,9 +22,8 @@ img {
     display: flex;
     flex-flow: row wrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center ;
-    background-color: #dadadaa2;
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -23,14 +35,15 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
     width: 200px;
-    height: 400px;
+    height: 450px;
     border: 2px solid black;
     margin: 35px;
     /* padding: 15px; */
     text-align: center;
     border-radius: 5px;
-    background-color: #f88d009a;
+    background-color: #ffffff;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.521);
 }
 #search{

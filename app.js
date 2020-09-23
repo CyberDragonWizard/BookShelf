@@ -9,7 +9,7 @@ button.addEventListener('click', async (e) => {
     const response = await axios.get(url + userInput)
     console.log(response)
     renderList(response.data.items)
-    displayDes(response.data.items)
+    // displayDes(response.data.items)
 
     input.value = ''
 })
@@ -20,10 +20,11 @@ const renderList = (book) => {
     removeData()
     book.forEach(data => {
         
-        const descriptionDiv = document.querySelector('.results')
+
+        const resultsDiv = document.querySelector('.results')
         const bookDiv = document.createElement('div')
         bookDiv.classList = ('book-div')
-        descriptionDiv.append(bookDiv)
+        resultsDiv.append(bookDiv)
 
 
         const title = document.createElement('h3');
@@ -31,7 +32,7 @@ const renderList = (book) => {
         bookDiv.appendChild(title);
 
         if (data.volumeInfo.authors !== undefined) {
-        const author = document.createElement('p');
+        const author = document.createElement('h4');
         author.innerHTML = data.volumeInfo.authors;
         bookDiv.appendChild(author);
         }
@@ -42,10 +43,16 @@ const renderList = (book) => {
         bookDiv.appendChild(cover);
         }
 
+        const modalDiv = document.querySelector('.description-content')
+        const descriptionDiv = document.createElement('div')
+        descriptionDiv.classList = ('description-div')
+        modalDiv.appendChild(descriptionDiv)
+
         // if (data.volumeInfo.description !== undefined) {
         // const description= document.createElement('p');
         // description.innerHTML = data.volumeInfo.description;
-        // bookDiv.appendChild(description)}
+        // descriptionDiv.appendChild(description)
+        // }
 
         // const showModal = document.querySelector('.description')
         // const descriptionButton = document.querySelector('.description-button')
@@ -75,29 +82,37 @@ const renderList = (book) => {
 
 }
 
-function createDescriptionButton() {
+const createDescriptionButton = () => {
     let descriptionButton = document.createElement('button')
     descriptionButton.innerHTML = 'Show Description'
     descriptionButton.setAttribute('class', 'description-button')
+    descriptionButton.addEventListener('click', () => {
+
+        if (data.volumeInfo.description !== undefined) {
+            const description= document.createElement('p');
+            description.innerHTML = data.volumeInfo.description;
+            descriptionDiv.appendChild(description)
+            }
+    })
 
     return  descriptionButton   
 }
 
-const displayDes = (book) => {
-    removeDescription()
-    book.forEach(data => {
-        const descriptionDiv = document.querySelector('.description-content')
-        const modalDiv = document.createElement('div')
-        modalDiv.classList = ('modal-div')
-        descriptionDiv.append(modalDiv)
+// const displayDes = (book) => {
+//     removeDescription()
+//     book.forEach(data => {
+//         const descriptionDiv = document.querySelector('.description-content')
+//         const modalDiv = document.createElement('div')
+//         modalDiv.classList = ('modal-div')
+//         descriptionDiv.append(modalDiv)
 
-        if (data.volumeInfo.description !== undefined) {
-        const description = document.createElement('p');
-        description.innerHTML = data.volumeInfo.description;
-        modalDiv.appendChild(description);
-        }
-    })
-}
+//         if (data.volumeInfo.description !== undefined) {
+//         const description = document.createElement('p');
+//         description.innerHTML = data.volumeInfo.description;
+//         body.appendChild(description);
+//         }
+//     })
+// }
 
 const removeData = () => {
     const oldData = document.querySelector('.results')
