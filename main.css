@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: rgb(228, 227, 227);
+    background-color: rgb(255, 255, 255);
 }
 img {
     border-radius: 10px;
@@ -11,7 +11,7 @@ img {
     flex-direction: column;
     justify-content: space-evenly;
     align-content: space-around;
-    background-color: #8080804d;
+    background-color: #f3f3f34d;
     
 }
 

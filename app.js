@@ -10,12 +10,16 @@ button.addEventListener('click', async (e) => {
     console.log(response)
     renderList(response.data.items)
     displayDes(response.data.items)
+
+    input.value = ''
 })
 
 const searchResults = document.querySelector('.results');
 
 const renderList = (book) => {
+    removeData()
     book.forEach(data => {
+        
         const descriptionDiv = document.querySelector('.results')
         const bookDiv = document.createElement('div')
         bookDiv.classList = ('book-div')
@@ -60,23 +64,40 @@ const renderList = (book) => {
 
 function createDescriptionButton() {
     let descriptionButton = document.createElement('button')
-    descriptionButton.innerHTML = 'Show Descrition'
+    descriptionButton.innerHTML = 'Show Description'
     descriptionButton.setAttribute('class', 'description-button')
-    return  descriptionButton
+    return  descriptionButton   
 }
 
 const displayDes = (book) => {
+    removeDescription()
     book.forEach(data => {
         const descriptionDiv = document.querySelector('.description-content')
         const modalDiv = document.createElement('div')
         modalDiv.classList = ('modal-div')
         descriptionDiv.append(modalDiv)
 
-
+        if (data.volumeInfo.description !== undefined) {
         const description = document.createElement('p');
         description.innerHTML = data.volumeInfo.description;
         modalDiv.appendChild(description);
+        }
     })
 }
+
+const removeData = () => {
+    const oldData = document.querySelector('.results')
+    while (oldData.lastChild) {
+        oldData.removeChild(oldData.lastChild)
+    }
+}
+
+const removeDescription = () => {
+    const oldData = document.querySelector('.description-content')
+    while (oldData.lastChild) {
+        oldData.removeChild(oldData.lastChild)
+    }
+}
+
 
 
