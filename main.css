@@ -15,6 +15,10 @@ h3 {
     font-family: 'Montserrat', sans-serif;
     color: rgb(43, 43, 43);
 }
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(43, 43, 43);
+}
 img {
     border-radius: 10px;
 }
@@ -52,7 +56,6 @@ img {
     align-items: center;
     padding: 10px;
     margin: 10px;
-    background-color: #000080;
   }
   .description-button{
       margin: 10px;
