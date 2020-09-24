@@ -33,7 +33,7 @@ const renderList = (book) => {
 
         if (data.volumeInfo.authors !== undefined) {
         const author = document.createElement('h4');
-        author.innerHTML = data.volumeInfo.authors;
+        author.innerHTML = "By: " + data.volumeInfo.authors;
         bookDiv.appendChild(author);
         }
 
