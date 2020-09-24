@@ -112,7 +112,7 @@ const createDescriptionButton = (descriptionString) => {
             modalDiv.appendChild(closeButton)
 
             closeButton.addEventListener('click', () => {
-                descriptionContent.classList.remove('modal-activate')
+            descriptionContent.classList.remove('modal-activate')
             })
             }
         if (descriptionString === undefined) {
@@ -125,6 +125,15 @@ const createDescriptionButton = (descriptionString) => {
             const descriptionDiv = document.createElement('div')
             descriptionDiv.classList = ('description-div')
             modalDiv.appendChild(descriptionDiv)
+
+            const closeButton = document.createElement('button')
+            closeButton.setAttribute('class', 'close-button' )
+            closeButton.innerHTML = 'Close'
+            modalDiv.appendChild(closeButton)
+
+            closeButton.addEventListener('click', () => {
+            descriptionContent.classList.remove('modal-activate')
+            })
     
             descriptionDiv.appendChild(description) 
         }
