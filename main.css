@@ -1,15 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap');
 body {
     text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: rgb(219, 219, 219);
+    
+}
+.background-img {
     background-image: url('./bookshelf.jpeg');
+    height: 40vh;
+    padding: 80px;
+    border-radius: 5px;
 }
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 66px;
+    font-size: 70px;
     font-weight: 300;
-    letter-spacing: 6px;
-    margin: 80px;
+    letter-spacing: 8px;
+    margin: 0 auto;
     color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.726);
+    width: 600px;
+    border-radius: 6px;
 }
 h3 {
     font-family: 'Montserrat', sans-serif;
@@ -55,14 +67,74 @@ img {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    margin: 10px;
+    margin: 20px;
+  }
+  #search-button {
+      visibility: hidden;
+  }
+  #close-button {
+    font-family: 'Montserrat', sans-serif;
+
+    width: 100px;
   }
   .description-button{
-      margin: 10px;
+      margin: 20px;
+      width: 150px;
+      height: 40px;
+      box-sizing: border-box;
+      border: 2px solid rgb(0, 148, 167);
+      border-radius: 6px;
+      font-size: 15px;
   }
   .description-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.527);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.9s;
+  }
+  .modal-activate {
+      visibility: visible;
+      opacity: 1;
+  }
+  .close-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
 
   }
-  .modal-div {
-
+  .modal {
+      position: relative;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    width: 42%;
+    height: 42%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 6px;
+  }
+  input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgb(75, 75, 75);
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: white;
+    background-image: url('search.png');
+    background-size: 35px;
+    /* background-position: 10px 10px;  */
+    background-repeat: no-repeat;
+    padding: 10px 40px 12px 40px;
+    text-align: center;
   }

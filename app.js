@@ -43,10 +43,10 @@ const renderList = (book) => {
         bookDiv.appendChild(cover);
         }
 
-        const modalDiv = document.querySelector('.description-content')
-        const descriptionDiv = document.createElement('div')
-        descriptionDiv.classList = ('description-div')
-        modalDiv.appendChild(descriptionDiv)
+        // const modalDiv = document.querySelector('.description-content')
+        // const descriptionDiv = document.createElement('div')
+        // descriptionDiv.classList = ('description-div')
+        // modalDiv.appendChild(descriptionDiv)
 
         // if (data.volumeInfo.description !== undefined) {
         // const description= document.createElement('p');
@@ -63,7 +63,7 @@ const renderList = (book) => {
 
       
 
-        bookDiv.appendChild(createDescriptionButton())
+        bookDiv.appendChild(createDescriptionButton(data.volumeInfo.description))
         
 
         // const description = document.createElement('p');
@@ -82,17 +82,52 @@ const renderList = (book) => {
 
 }
 
-const createDescriptionButton = () => {
+const createDescriptionButton = (descriptionString) => {
+    let descriptionContent = document.querySelector('.description-content')
     let descriptionButton = document.createElement('button')
     descriptionButton.innerHTML = 'Show Description'
     descriptionButton.setAttribute('class', 'description-button')
     descriptionButton.addEventListener('click', () => {
+        descriptionContent.classList.add('modal-activate')
 
-        if (data.volumeInfo.description !== undefined) {
+
+
+        if (descriptionString !== undefined) {
             const description= document.createElement('p');
-            description.innerHTML = data.volumeInfo.description;
+            description.innerHTML = descriptionString
+            
+
+            const modalDiv = document.querySelector('.modal')
+            modalDiv.innerHTML = "";
+
+            const descriptionDiv = document.createElement('div')
+            descriptionDiv.classList = ('description-div')
+            modalDiv.appendChild(descriptionDiv)
+
             descriptionDiv.appendChild(description)
+
+            const closeButton = document.createElement('button')
+            closeButton.setAttribute('class', 'close-button' )
+            closeButton.innerHTML = 'Close'
+            modalDiv.appendChild(closeButton)
+
+            closeButton.addEventListener('click', () => {
+                descriptionContent.classList.remove('modal-activate')
+            })
             }
+        if (descriptionString === undefined) {
+            const description= document.createElement('p');
+            description.innerHTML = "Description unavailable."
+                
+    
+            const modalDiv = document.querySelector('.modal')
+            modalDiv.innerHTML = "";
+            const descriptionDiv = document.createElement('div')
+            descriptionDiv.classList = ('description-div')
+            modalDiv.appendChild(descriptionDiv)
+    
+            descriptionDiv.appendChild(description) 
+        }
     })
 
     return  descriptionButton   
