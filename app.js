@@ -7,9 +7,7 @@ button.addEventListener('click', async (e) => {
     e.preventDefault();
     let userInput = input.value;
     const response = await axios.get(url + userInput)
-    console.log(response)
     renderList(response.data.items)
-    // displayDes(response.data.items)
 
     input.value = ''
 })
@@ -19,33 +17,31 @@ const searchResults = document.querySelector('.results');
 const renderList = (book) => {
     removeData()
     book.forEach(data => {
+    
+      
+    const title = document.createElement('h3');
+    const resultsDiv = document.querySelector('.results')
+    const bookDiv = document.createElement('div')
+    bookDiv.classList = ('book-div')
+    resultsDiv.append(bookDiv)
+
+    title.innerHTML = data.volumeInfo.title;
+    bookDiv.appendChild(title);
+
+    if (data.volumeInfo.authors !== undefined) {
+    const author = document.createElement('h4');
+    author.innerHTML = "By: " + data.volumeInfo.authors;
+    bookDiv.appendChild(author);
+    }
         
+    if (data.volumeInfo.imageLinks !== undefined) {
+    const cover = document.createElement('img');
+    cover.setAttribute('src', data.volumeInfo.imageLinks.thumbnail);
+    bookDiv.appendChild(cover);
+    }
 
-        const resultsDiv = document.querySelector('.results')
-        const bookDiv = document.createElement('div')
-        bookDiv.classList = ('book-div')
-        resultsDiv.append(bookDiv)
-
-
-        const title = document.createElement('h3');
-        title.innerHTML = data.volumeInfo.title;
-        bookDiv.appendChild(title);
-
-        if (data.volumeInfo.authors !== undefined) {
-        const author = document.createElement('h4');
-        author.innerHTML = "By: " + data.volumeInfo.authors;
-        bookDiv.appendChild(author);
-        }
-
-        if (data.volumeInfo.imageLinks !== undefined) {
-        const cover = document.createElement('img');
-        cover.setAttribute('src', data.volumeInfo.imageLinks.thumbnail);
-        bookDiv.appendChild(cover);
-        }
-
-        bookDiv.appendChild(createDescriptionButton(data.volumeInfo.description))
-        
-        searchResults.appendChild(bookDiv);
+    bookDiv.appendChild(createDescriptionButton(data.volumeInfo.description))
+    searchResults.appendChild(bookDiv);
 
     })
 
@@ -57,10 +53,8 @@ const createDescriptionButton = (descriptionString) => {
     descriptionButton.innerHTML = 'Show Description'
     descriptionButton.setAttribute('class', 'description-button')
     descriptionButton.addEventListener('click', () => {
+        
         descriptionContent.classList.add('modal-activate')
-
-
-
         if (descriptionString !== undefined) {
             const description= document.createElement('p');
             description.innerHTML = descriptionString
@@ -91,6 +85,7 @@ const createDescriptionButton = (descriptionString) => {
     
             const modalDiv = document.querySelector('.modal')
             modalDiv.innerHTML = "";
+            
             const descriptionDiv = document.createElement('div')
             descriptionDiv.classList = ('description-div')
             modalDiv.appendChild(descriptionDiv)

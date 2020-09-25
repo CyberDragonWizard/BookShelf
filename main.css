@@ -13,18 +13,13 @@ body {
     border-radius: 5px;
 }
 h1 {
-    /* font-size: 70px;
-    font-weight: 300;
-    letter-spacing: 3px; */
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.726);
+    background-color: rgba(0, 0, 0, 0.589);
     max-width: 820px;
     border-radius: 6px;
     text-align: center;
 }
 h1 span{
-    /* margin: 0 auto; */
-    /* background-color: rgba(0, 0, 0, 0.726); */
     border-radius: 6px;
     display: table-cell;
     font-family: 'Montserrat', sans-serif;
@@ -33,7 +28,6 @@ h1 span{
     font-weight: 300;
     letter-spacing: 29px;
     display: inline-flex;
-    /* align-items: center; */
 }
 h1:hover span{
     animation: animate .5s infinite;
