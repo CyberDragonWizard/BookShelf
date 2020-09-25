@@ -46,12 +46,12 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Sept 18-21| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|Sept 21| Project Approval | Incomplete
-|Sept 22| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Sept 23| MVP | Incomplete
-|Sept 24| Post MVP/Styling | Incomplete
-|Sept 25| Presentations | Incomplete
+|Sept 18-21| Prompt / Wireframes / Priority Matrix / Timeframes | complete
+|Sept 21| Project Approval | complete
+|Sept 22| Core Application Structure (HTML, CSS, etc.) | complete
+|Sept 23| MVP | complete
+|Sept 24| Post MVP/Styling | complete
+|Sept 25| Presentations | complete
 
 ## Priority Matrix
 

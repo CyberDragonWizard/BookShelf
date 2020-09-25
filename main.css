@@ -38,10 +38,10 @@ h1:hover span{
         transform: translateY(O);
     }
     50%{
-        transform: translateY(-30px);
+        transform: translateY(-30%);
     }
     100%{
-        transform: translateY(0px);
+        transform: translateY(0);
     }
 }
 h1 span:nth-child(1) {
